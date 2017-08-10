@@ -7,7 +7,7 @@ management:
 
 spring:
   application:
-    name: daasWeatherService
+    name: das-weather-service
   datasource:
     url: jdbc:postgresql://localhost:5432/weather?currentSchema=weather
     username: eos

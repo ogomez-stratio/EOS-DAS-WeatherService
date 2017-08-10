@@ -32,7 +32,7 @@ public class DasWeatherController {
 
     @GetMapping("/weatherAudit/city({city}/prediction/{prediction}")
     @ApiOperation("Get forecast from audit table filter by city and type of prediction (sunny, storm,..)")
-    public ResponseEntity <List<WeatherEntityDto>> getLastQuestion(@PathVariable String city,
+    public ResponseEntity <List<WeatherEntityDto>> gethistoric(@PathVariable String city,
                                                                    @PathVariable String prediction)
     throws Exception{
 
