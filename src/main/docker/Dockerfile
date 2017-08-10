@@ -2,11 +2,11 @@ FROM frolvlad/alpine-oraclejdk8:slim
 
 VOLUME /tmp
 
-ADD dasWeatherService-1.0-SNAPSHOT.jar dasWeatherService.jar
+ADD das-weather-service-0.0.1-SNAPSHOT.jar das-weather-service.jar
 
-RUN touch dasWeatherService.jar
+RUN sh -c 'touch /das-weather-service.jar'
 
 ENV JAVA_OPTS="-Xmx512m -Xms256m"
 
-ENTRYPOINT ["bash", "java -jar /dasWeatherService.jar $JAVA_OPTS " ]
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /das-weather-service.jar" ]
 
