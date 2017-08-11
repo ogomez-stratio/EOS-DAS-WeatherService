@@ -33,7 +33,7 @@ public class DasWeatherServiceImpl implements DasWeatherService {
     @Override
     public List<WeatherEntityDto> getHistoricByCityPrediction(String city,String text) throws Exception{
 
-        List<WeatherEntity> entity = weatherRepository.findByDesCityAndDesTextLikeIgnoreCase(city,"%"+text+"%");
+        List<WeatherEntity> entity = weatherRepository.findByDesCityLikeIgnoreCaseAndDesTextLikeIgnoreCase(city,"%"+text+"%");
         Optional<List<WeatherEntityDto>> result = Optional.ofNullable(
                 entity.stream()
                         .map(e -> this.dozerBeanMapper.map(e, WeatherEntityDto.class))

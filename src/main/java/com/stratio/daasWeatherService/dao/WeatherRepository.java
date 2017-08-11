@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface WeatherRepository extends JpaRepository<WeatherEntity,Long>{
 
-    List<WeatherEntity> findByDesCityAndDesTextLikeIgnoreCase(String city, String text);
+    List<WeatherEntity> findByDesCityLikeIgnoreCaseAndDesTextLikeIgnoreCase(String city, String text);
 }
