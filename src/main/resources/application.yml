@@ -1,5 +1,5 @@
 server:
-  port: 8091
+  port: ${SERVER_PORT:8091}
 
 management:
   security:
@@ -7,11 +7,11 @@ management:
 
 spring:
   application:
-    name: das-weather-service
+    name: ${SPRING_APPLICATION_NAME:das-weather-service}
   datasource:
-    url: jdbc:postgresql://localhost:5432/weather?currentSchema=weather
-    username: eos
-    password:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:weather}?currentSchema=${POSTGRES_SCHEMA:weather}
+    username: ${POSTGRES_USERNAME:eos}
+    password: $POSTGRES_PASSWORD
     type: com.zaxxer.hikari.HikariDataSource
     validationQuery: SELECT 1
     hikari:
