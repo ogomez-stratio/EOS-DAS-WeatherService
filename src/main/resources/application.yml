@@ -11,7 +11,7 @@ spring:
   datasource:
     url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:weather}?currentSchema=${POSTGRES_SCHEMA:weather}
     username: ${POSTGRES_USERNAME:eos}
-    password: $POSTGRES_PASSWORD
+    password: ${POSTGRES_PASSWORD}
     type: com.zaxxer.hikari.HikariDataSource
     validationQuery: SELECT 1
     hikari:
