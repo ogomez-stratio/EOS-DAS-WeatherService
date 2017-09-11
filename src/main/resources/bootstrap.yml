@@ -1,6 +1,10 @@
-spring:
-  cloud:
-    consul:
-      discovery:
-        preferIpAddress: true
-        queryPassing: true
+#spring:
+#  cloud:
+#    consul:
+#      discovery:
+#        preferIpAddress: true
+#        queryPassing: true
+#      config:
+#        data-key: data
+#        prefix: config
+#        format: yaml
